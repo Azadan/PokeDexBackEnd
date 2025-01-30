@@ -23,7 +23,7 @@ import com.PokeDex.PokeDex.Service.PokemonService;
 
 @RestController
 @RequestMapping("/api/pokedex")
-@CrossOrigin(origins = "http://127.0.0.1:5500/HTML")
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class PokemonController {
 
     private final PokemonService pokemonService;
@@ -42,7 +42,7 @@ public class PokemonController {
         return pokemonService.getPokemonById(id);
     }
     
-    @PostMapping
+    @PostMapping("/add")
     public Pokemon addPokemon(@RequestBody Pokemon pokemon) {
         return pokemonService.savePokemon(pokemon);
     }

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,10 +41,14 @@ public class PokemonController {
         return pokemonService.getPokemonById(id);
     }
     
-
     @PostMapping
     public Pokemon addPokemon(@RequestBody Pokemon pokemon) {
         return pokemonService.savePokemon(pokemon);
+    }
+
+    @DeleteMapping("/{id}")
+    public List<Pokemon> deletePokemonById(@PathVariable Long id) {
+        return pokemonService.deletePokemon(id);
     }
 
     

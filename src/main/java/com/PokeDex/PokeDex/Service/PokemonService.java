@@ -31,4 +31,10 @@ public class PokemonService {
         return pokemonRepository.save(pokemon);
     }
 
+    public List<Pokemon> deletePokemon(Long id) {
+        pokemonRepository.deleteById(id);
+        return pokemonRepository.findAll();
+    }
+
+
 }

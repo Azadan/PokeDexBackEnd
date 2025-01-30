@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.PokeDex.PokeDex.API.Model.Pokemon;
 import com.PokeDex.PokeDex.Repository.PokemonRepository;
@@ -36,5 +39,11 @@ public class PokemonService {
         return pokemonRepository.findAll();
     }
 
-
+    public Optional<Pokemon> updatePokemonComment(Long id, String comment) {
+        return pokemonRepository.findById(id)
+            .map(pokemon -> {
+                pokemon.setComments(comment);
+                return pokemonRepository.save(pokemon);
+            });
+    }
 }

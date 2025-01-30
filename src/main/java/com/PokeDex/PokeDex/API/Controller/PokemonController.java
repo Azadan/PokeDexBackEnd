@@ -3,9 +3,11 @@ package com.PokeDex.PokeDex.API.Controller;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +35,11 @@ public class PokemonController {
         return pokemonService.getAllPokemon();
     }
 
+    @GetMapping("/{id}")
+    public Optional<Pokemon> getPokemonById(@PathVariable Long id) {
+        return pokemonService.getPokemonById(id);
+    }
+    
 
     @PostMapping
     public Pokemon addPokemon(@RequestBody Pokemon pokemon) {

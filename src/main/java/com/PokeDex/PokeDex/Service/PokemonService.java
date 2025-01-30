@@ -1,6 +1,7 @@
 package com.PokeDex.PokeDex.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,10 @@ public class PokemonService {
     
     public List<Pokemon> getAllPokemon() {
         return pokemonRepository.findAll();
+    }
+
+    public Optional<Pokemon> getPokemonById(Long id) {
+        return pokemonRepository.findById(id);
     }
 
     public Pokemon savePokemon(Pokemon pokemon) {

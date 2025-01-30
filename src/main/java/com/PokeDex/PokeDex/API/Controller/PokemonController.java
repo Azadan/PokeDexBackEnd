@@ -44,6 +44,7 @@ public class PokemonController {
     
     @PostMapping("/add")
     public Pokemon addPokemon(@RequestBody Pokemon pokemon) {
+        System.out.println("Fångad pokemon: " + pokemon);
         return pokemonService.savePokemon(pokemon);
     }
 

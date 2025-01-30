@@ -1,5 +1,7 @@
 package com.PokeDex.PokeDex.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,10 @@ public class PokemonService {
         this.pokemonRepository = pokemonRepository;
     }
     
+    public List<Pokemon> getAllPokemon() {
+        return pokemonRepository.findAll();
+    }
+
     public Pokemon savePokemon(Pokemon pokemon) {
         return pokemonRepository.save(pokemon);
     }

@@ -26,3 +26,19 @@ Frontend-applikationen finns här: (https://github.com/Azadan/PokeFrontEnd)
 - MySQL
 - JPA/Hibernate
 - Maven
+
+### Installation och Start
+
+## Förutsättningar
+- Java
+- Maven
+- MAMP
+
+## Start
+1. Klona projektet
+2. Skapa en mysql användare i MAMP
+3. Konfiguera MySQL-databas i application-properties
+4. Kör mvn clean install
+5. Starta applikationen
+
+Servern körs på localhost:8080

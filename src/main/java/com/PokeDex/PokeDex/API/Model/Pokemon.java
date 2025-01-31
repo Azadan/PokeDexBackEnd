@@ -10,6 +10,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
+/**
+ * Pokemon-entitet-
+ * Innehåller all grundläggande information om en Pokemon,
+ * Konstruktörer samt getters/setter är skapade med lombok annotation
+ */
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
